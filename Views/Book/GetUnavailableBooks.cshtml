@@ -1,0 +1,28 @@
+﻿
+@{
+    ViewData["Title"] = "GetUnavailableBooks";
+}
+@model List<Book>
+<section class="slider_section">
+    <br> <br> <br> <br> <br>  <br> <br> 
+</section>
+<h1 class="text-center">Unavailable Books</h1>
+
+<table class="table table-bordered table-hover">
+    <tr class="table-warning">
+        <th>Title</th>
+        <th>Author</th>
+        <th>Category</th>
+        <th>Image</th>
+
+    </tr>
+    @foreach(var item in Model)
+    {
+        <tr>
+            <td>@item.Name</td>
+            <td>@item.Author</td>
+            <td>@item.Category.Name</td>
+            <td><img src="@item.Image" alt="@item.Name" class="img-fluid" width="180" height="500" /></td>
+        </tr>
+    }
+</table>
